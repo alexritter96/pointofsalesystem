@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+          <meta charset=utf-8 />
+          <title>Login/Signup</title>
+          {% load static %}
+          <link rel="stylesheet" type="text/css" href="{% static 'pointofsale/css/bootstrap.min.css' %}" />
+          <link rel="stylesheet" type="text/css" href="{% static 'pointofsale/css/signup.css' %}" />
+          <script src="{% static 'pointofsale/js/bootstrap.min.js' %}"></script>
+
+
+    </head>
+    <body>
+        <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <form method="post" action="">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input class="form-control" id="username" name="username" type="text" placeholder="Username" />
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input class="form-control" id="password" name="password" type="password" placeholder="Password" />
+                        </div>
+                        <input type="hidden" name="next" value="{{ next }}" />
+                        <div class="form-group">
+                            <input class="form-control btn btn-primary" name="submit" type="submit" value="Log in" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+    </body>
